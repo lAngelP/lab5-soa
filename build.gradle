@@ -21,12 +21,15 @@ repositories {
 }
 
 dependencies {
+    compile("org.springframework.boot:spring-boot-starter-websocket")
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-thymeleaf")
     compile("org.webjars.bowergithub.twbs:bootstrap:3.3.7")
     compile("org.webjars.bowergithub.janl:mustache.js:3.0.1")
     compile("org.apache.camel:camel-spring-boot:2.23.0")
     compile("org.apache.camel:camel-twitter:2.23.0")
+    compile("org.apache.camel:camel-websocket:2.23.0")
+    compile("org.apache.camel:camel-jackson:2.23.0")
 }
 
 task zip(type: Zip) {

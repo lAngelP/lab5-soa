@@ -31,6 +31,9 @@
  <div class="row panel panel-default">
   <div class="panel-heading">
    <a href="https://twitter.com/{{user.screenName}}" target="_blank"><b>@{{user.screenName}}</b></a>
+   {{#retweet}}
+    <span class="badge badge-light">RT</span>
+   {{/retweet}}
    <div class="pull-right">
     Followers count: {{user.followersCount}}
    </div>
@@ -59,14 +62,26 @@
 </nav>
 <div class="container">
     <!-- Formulario principal -->
-    <form action="search" id="search" method="get">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+            <div id="alertSubbed" class="alert alert-success" role="alert">
+                <strong>Well done!</strong> Te has suscrito a: <span id="subbedTerm"></span>
+            </div>
+        </div>
+    </div>
+    <form id="search">
         <div class="row">
             <input class="form-control" id="q" name="q" placeholder="Escribe algo que quieras buscar"
                    type="text"/>
         </div>
         <div class="row">&nbsp;</div>
         <div class="row">
-            <button class="btn btn-default center-block" type="submit">Buscar</button>
+            <div class="col-md-offset-4 col-md-2">
+                <button id="searchBtn" class="btn btn-default center-block">Buscar</button>
+            </div>
+            <div class="col-md-2">
+                <button id="streamBtn" class="btn btn-default center-block">Stream</button>
+            </div>
         </div>
     </form>
     <div class="row">&nbsp;</div>
